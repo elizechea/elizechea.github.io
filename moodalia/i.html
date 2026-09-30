@@ -25,7 +25,7 @@ h1{font-size:1.7rem}p{color:var(--muted)}
 <script>
 // The fragment never reaches the server; hand it to the app via the fallback scheme.
 var h = location.hash || "";
-document.getElementById("open").href = "moodlink://i" + h;
+document.getElementById("open").href = "moodalia://i" + h;
 try {
   var p = JSON.parse(atob(h.slice(1).replace(/-/g,"+").replace(/_/g,"/")));
   if (p && p.n) document.getElementById("t").textContent = p.n + " te invita a Moodalia";
