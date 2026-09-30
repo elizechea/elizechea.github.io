@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Invitación a Moodlink</title>
+<title>Invitación a Moodalia</title>
 <style>
 :root{--bg:#fbf8f4;--fg:#1f1b16;--muted:#6b635a;--accent:#7a5af8;--on:#fff}
 @media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#f1ece6;--muted:#a79f96;--accent:#a08bff;--on:#171512}}
@@ -16,10 +16,10 @@ h1{font-size:1.7rem}p{color:var(--muted)}
 </head>
 <body><main>
 <div style="font-size:2.4rem">💬</div>
-<h1 id="t">Te han invitado a Moodlink</h1>
+<h1 id="t">Te han invitado a Moodalia</h1>
 <p id="d">Abre la invitación en la app. Si todavía no la tienes, instálala y vuelve a abrir este enlace.</p>
-<a class="b" id="open" href="#">Abrir en Moodlink</a>
-<a class="b s" id="get" href="https://play.google.com/store/apps/details?id=io.github.elizechea.moodlink">Instalar Moodlink</a>
+<a class="b" id="open" href="#">Abrir en Moodalia</a>
+<a class="b s" id="get" href="https://play.google.com/store/apps/details?id=io.github.elizechea.moodlink">Instalar Moodalia</a>
 <p style="font-size:14px">La invitación va después del «#» del enlace: se queda en tu móvil y no se envía a este sitio web.</p>
 </main>
 <script>
@@ -28,13 +28,13 @@ var h = location.hash || "";
 document.getElementById("open").href = "moodlink://i" + h;
 try {
   var p = JSON.parse(atob(h.slice(1).replace(/-/g,"+").replace(/_/g,"/")));
-  if (p && p.n) document.getElementById("t").textContent = p.n + " te invita a Moodlink";
+  if (p && p.n) document.getElementById("t").textContent = p.n + " te invita a Moodalia";
 } catch (e) {}
 if (!/es/i.test(navigator.language || "")) {
   document.documentElement.lang = "en";
   document.getElementById("d").textContent = "Open the invitation in the app. If you don't have it yet, install it and open this link again.";
-  document.getElementById("open").textContent = "Open in Moodlink";
-  document.getElementById("get").textContent = "Get Moodlink";
+  document.getElementById("open").textContent = "Open in Moodalia";
+  document.getElementById("get").textContent = "Get Moodalia";
 }
 </script>
 </body></html>
