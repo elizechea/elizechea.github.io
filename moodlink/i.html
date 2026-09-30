@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Invitación a Moodlink</title>
+<style>
+:root{--bg:#fbf8f4;--fg:#1f1b16;--muted:#6b635a;--accent:#7a5af8;--on:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#171512;--fg:#f1ece6;--muted:#a79f96;--accent:#a08bff;--on:#171512}}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.5 system-ui,sans-serif}
+main{max-width:34rem;margin:0 auto;padding:48px 16px}
+h1{font-size:1.7rem}p{color:var(--muted)}
+.b{display:block;text-align:center;background:var(--accent);color:var(--on);padding:14px 18px;border-radius:14px;text-decoration:none;font-weight:600;margin:12px 0}
+.s{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+</style>
+</head>
+<body><main>
+<div style="font-size:2.4rem">💬</div>
+<h1 id="t">Te han invitado a Moodlink</h1>
+<p id="d">Abre la invitación en la app. Si todavía no la tienes, instálala y vuelve a abrir este enlace.</p>
+<a class="b" id="open" href="#">Abrir en Moodlink</a>
+<a class="b s" id="get" href="https://play.google.com/store/apps/details?id=io.github.elizechea.moodlink">Instalar Moodlink</a>
+<p style="font-size:14px">La invitación va después del «#» del enlace: se queda en tu móvil y no se envía a este sitio web.</p>
+</main>
+<script>
+// The fragment never reaches the server; hand it to the app via the fallback scheme.
+var h = location.hash || "";
+document.getElementById("open").href = "moodlink://i" + h;
+try {
+  var p = JSON.parse(atob(h.slice(1).replace(/-/g,"+").replace(/_/g,"/")));
+  if (p && p.n) document.getElementById("t").textContent = p.n + " te invita a Moodlink";
+} catch (e) {}
+if (!/es/i.test(navigator.language || "")) {
+  document.documentElement.lang = "en";
+  document.getElementById("d").textContent = "Open the invitation in the app. If you don't have it yet, install it and open this link again.";
+  document.getElementById("open").textContent = "Open in Moodlink";
+  document.getElementById("get").textContent = "Get Moodlink";
+}
+</script>
+</body></html>

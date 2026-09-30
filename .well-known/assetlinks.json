@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.elizechea.moodlink",
+      "sha256_cert_fingerprints": [
+        "41:A8:C3:C3:ED:94:4F:16:D8:0F:51:00:85:38:3F:35:B7:42:5E:86:9C:A1:20:4B:BD:B6:0B:D8:44:9D:1F:5E"
+      ]
+    }
+  }
+]
